@@ -19,6 +19,41 @@ const corsOpts = {
 
 app.use(cors());
 
+
+// ------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// -----------------------------------------------------------------------------------------------------
+
+
+
+const getTabData = require("./dataServices/getTabData")
+const getCompData = require("./dataServices/getComponentData")
+
+
+
+
+
+
+
+
+
+
+
+
+
 app.get('/', (req, res) => {
 
   let data = {
@@ -26,58 +61,83 @@ app.get('/', (req, res) => {
       {
         label: "Home",
         comp: "home",
+        compId: "Home"
       },
       {
         label: "About",
-        comp: "about"
+        comp: "about",
+        compId: "about"
       },
       {
         label: "Agenda",
-        comp: "agenda"
+        comp: "agenda",
+        compId: "agenda"
       }
     ],
 
-    components: {
-      home: {
-        tab: [
-          {
-            label: "Home",
-            comp: "home"
-          }, {
-            label: "Home",
-            comp: "home"
-          },
-        ]
-      },
-      about: {
-        tab: [
-          {
-            label: "Home",
-            comp: "home"
-          }, {
-            label: "Home",
-            comp: "home"
-          },
-        ]
-      },
+    // components: {
+    //   home: {
+    //     tab: [
+    //       {
+    //         label: "Home",
+    //         comp: "home"
+    //       }, {
+    //         label: "Home",
+    //         comp: "home"
+    //       },
+    //     ]
+    //   },
+    //   about: {
+    //     tab: [
+    //       {
+    //         label: "Home",
+    //         comp: "home"
+    //       }, {
+    //         label: "Home",
+    //         comp: "home"
+    //       },
+    //     ]
+    //   },
 
-      agenda: {
-        tab: [
-          {
-            label: "Home",
-            comp: "home"
-          }, {
-            label: "Home",
-            comp: "home"
-          },
-        ]
-      },
+    //   agenda: {
+    //     tab: [
+    //       {
+    //         label: "Home",
+    //         comp: "home"
+    //       }, {
+    //         label: "Home",
+    //         comp: "home"
+    //       },
+    //     ]
+    //   },
 
-    }
+    // }
 
   }
   res.send(JSON.stringify(data));
 })
+
+
+
+app.get('/getCompDetails/:compId', (req, res) => {
+
+  let compId = req.params.compId;
+
+  let data = getCompData(compId);
+
+  res.send(JSON.stringify(data));
+})
+
+
+app.get('/getTabDetails/:tabId', (req, res) => {
+
+  let tabId = req.params.tabId;
+
+  let data = getTabData(tabId);
+
+  res.send(JSON.stringify(data));
+})
+
 
 
 const port = process.env.PORT || 3000;
