@@ -140,5 +140,83 @@ app.get('/getTabDetails/:tabId', (req, res) => {
 
 
 
+app.get('/menu', (req, res) => {
+  let data =
+  {
+    meniId: "menu1a",
+    assignedPages: [{
+      pageId: "1avrs",
+      label: "Agenda"
+    },
+    {
+      pageId: "2avrs",
+      label: "Information"
+    },
+    {
+      pageId: "3avrs",
+      label: "My Event"
+    }
+    ]
+  }
+})
+
+
+
+app.get('/getPageDetailsById:pageId', (req, res) => {
+  let data =
+  {
+    pageId: "page101",
+    PAgeName: "Agenda",
+    PageStructure: [
+      {
+        compId: "",
+        CompNAme: "",
+        CompType: "",
+        // ColSPan-rowspan-flex-size
+        sequence: 1//,etc
+      },
+      {
+        compId: "",
+        CompNAme: "",
+        CompType: "",
+        // ColSPan-rowspan-flex-size
+        sequence: 2//,etc
+      }
+      {
+        compId: "",
+        CompNAme: "",
+        CompType: "",
+        // ColSPan-rowspan-flex-size
+        sequence: 3//,etc
+      }
+      {
+        compId: "",
+        CompNAme: "",
+        CompType: "",
+        // ColSPan-rowspan-flex-size
+        sequence: 1//,etc
+      }
+    ]
+  }
+})
+
+
+
+
+app.get('/getComponentDataById:compId', (req, res) => {
+
+  // send and store data in JSON string , parse it in front according to component needs
+  let data = {
+    pageId: "page101",
+    compName: "Agenda",
+    compStyles: "CSS JSON String",
+    compData: "JSON String"
+  }
+
+})
+
+
+
+
 const port = process.env.PORT || 3000;
 app.listen(port);
