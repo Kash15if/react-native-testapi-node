@@ -141,6 +141,8 @@ app.get('/getTabDetails/:tabId', (req, res) => {
 
 
 app.get('/menu', (req, res) => {
+
+  console.log("menu called")
   let data =
   {
     meniId: "menu1a",
@@ -158,53 +160,64 @@ app.get('/menu', (req, res) => {
     }
     ]
   }
+
+  res.send(data)
 })
 
 
 
-app.get('/getPageDetailsById:pageId', (req, res) => {
+app.get('/getPageDetailsById/:pageId', (req, res) => {
+
+
+  console.log(req.params.pageId)
+
+
   let data =
   {
     pageId: "page101",
     PAgeName: "Agenda",
     PageStructure: [
       {
-        compId: "",
-        CompNAme: "",
-        CompType: "",
+        compId: "c101",
+        CompNAme: "Card1",
+        CompType: "Card",
         // ColSPan-rowspan-flex-size
         sequence: 1//,etc
       },
       {
-        compId: "",
-        CompNAme: "",
-        CompType: "",
+        compId: "c102",
+        CompNAme: "TimeLine 1",
+        CompType: "TimeLine",
         // ColSPan-rowspan-flex-size
         sequence: 2//,etc
-      }
+      },
       {
-        compId: "",
-        CompNAme: "",
-        CompType: "",
+        compId: "c103",
+        CompNAme: "List 1",
+        CompType: "List",
         // ColSPan-rowspan-flex-size
         sequence: 3//,etc
-      }
-      {
-        compId: "",
-        CompNAme: "",
-        CompType: "",
-        // ColSPan-rowspan-flex-size
-        sequence: 1//,etc
-      }
+      },
+      // {
+      //   compId: "c104",
+      //   CompNAme: "Tab 1",
+      //   CompType: "Tab",
+      //   // ColSPan-rowspan-flex-size
+      //   sequence: 1//,etc
+      // }
     ]
   }
+
+  res.send(data)
 })
 
 
 
 
-app.get('/getComponentDataById:compId', (req, res) => {
+app.get('/getComponentDataById/:compId', (req, res) => {
 
+
+  console.log(req.params.compId)
   // send and store data in JSON string , parse it in front according to component needs
   let data = {
     pageId: "page101",
@@ -212,6 +225,8 @@ app.get('/getComponentDataById:compId', (req, res) => {
     compStyles: "CSS JSON String",
     compData: "JSON String"
   }
+
+  res.send(data)
 
 })
 
