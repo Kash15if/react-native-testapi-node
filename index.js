@@ -169,46 +169,101 @@ app.get('/menu', (req, res) => {
 app.get('/getPageDetailsById/:pageId', (req, res) => {
 
 
+  const pageInputId = req.params.pageId
   console.log(req.params.pageId)
 
+  if (pageInputId === "1avrs") {
+    let data =
+    {
+      pageId: "page101",
+      PAgeName: "Agenda",
+      PageStructure: [
+        {
+          compId: "c101",
+          CompNAme: "Card1",
+          CompType: "Card",
+          // ColSPan-rowspan-flex-size
+          sequence: 1//,etc
+        },
+        {
+          compId: "c102",
+          CompNAme: "TimeLine 1",
+          CompType: "TimeLine",
+          // ColSPan-rowspan-flex-size
+          sequence: 2//,etc
+        },
+        {
+          compId: "c103",
+          CompNAme: "List 1",
+          CompType: "List",
+          // ColSPan-rowspan-flex-size
+          sequence: 3//,etc
+        },
+        // {
+        //   compId: "c104",
+        //   CompNAme: "Tab 1",
+        //   CompType: "Tab",
+        //   // ColSPan-rowspan-flex-size
+        //   sequence: 1//,etc
+        // }
+      ]
+    }
 
-  let data =
-  {
-    pageId: "page101",
-    PAgeName: "Agenda",
-    PageStructure: [
-      {
-        compId: "c101",
-        CompNAme: "Card1",
-        CompType: "Card",
-        // ColSPan-rowspan-flex-size
-        sequence: 1//,etc
-      },
-      {
-        compId: "c102",
-        CompNAme: "TimeLine 1",
-        CompType: "TimeLine",
-        // ColSPan-rowspan-flex-size
-        sequence: 2//,etc
-      },
-      {
-        compId: "c103",
-        CompNAme: "List 1",
-        CompType: "List",
-        // ColSPan-rowspan-flex-size
-        sequence: 3//,etc
-      },
-      // {
-      //   compId: "c104",
-      //   CompNAme: "Tab 1",
-      //   CompType: "Tab",
-      //   // ColSPan-rowspan-flex-size
-      //   sequence: 1//,etc
-      // }
-    ]
+    res.send(data)
+  }
+  else if (pageInputId === "1avrs") {
+    let data =
+    {
+      pageId: "page101",
+      PAgeName: "Agenda",
+      PageStructure: [
+
+        {
+          compId: "c202",
+          CompNAme: "TimeLine 1",
+          CompType: "TimeLine",
+          // ColSPan-rowspan-flex-size
+          sequence: 2//,etc
+        },
+        {
+          compId: "c201",
+          CompNAme: "Card1",
+          CompType: "Card",
+          // ColSPan-rowspan-flex-size
+          sequence: 1//,etc
+        }
+        // {
+        //   compId: "c104",
+        //   CompNAme: "Tab 1",
+        //   CompType: "Tab",
+        //   // ColSPan-rowspan-flex-size
+        //   sequence: 1//,etc
+        // }
+      ]
+    }
+
+    res.send(data)
+  }
+  else {
+    let data =
+    {
+      pageId: "page101",
+      PAgeName: "Agenda",
+      PageStructure: [
+        {
+          compId: "c304",
+          CompNAme: "Tab 1",
+          CompType: "Tab",
+          // ColSPan-rowspan-flex-size
+          sequence: 1//,etc
+        }
+      ]
+    }
+
+    res.send(data)
   }
 
-  res.send(data)
+
 })
 
 
