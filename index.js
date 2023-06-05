@@ -270,18 +270,259 @@ app.get('/getPageDetailsById/:pageId', (req, res) => {
 
 
 app.get('/getComponentDataById/:compId', (req, res) => {
+  const comId = req.params.compId;
 
-
-  console.log(req.params.compId)
+  console.log(comId);
   // send and store data in JSON string , parse it in front according to component needs
-  let data = {
-    pageId: "page101",
-    compName: "Agenda",
-    compStyles: "CSS JSON String",
-    compData: "JSON String"
-  }
 
-  res.send(data)
+  if (comId === "c101") {
+    let data = {
+      compId: "c101",
+      compName: "Card1",
+      compStyles: "CSS JSON String",
+      compData: JSON.stringify({ title: "Card title", content: "Some quick example text to build on the card title and make up the bulk of the card's content." }),
+    };
+    res.send(data);
+  } else if (comId === "c102") {
+    let data = {
+      compId: "c102",
+      compName: "TimeLine 1",
+      compStyles: "CSS JSON String",
+      compData: JSON.stringify({
+        data:
+          [
+            { time: '09:00', title: 'Event 1', description: 'Event 1 Description' },
+            { time: '10:45', title: 'Event 2', description: 'Event 2 Description' },
+            { time: '12:00', title: 'Event 3', description: 'Event 3 Description' },
+            { time: '14:00', title: 'Event 4', description: 'Event 4 Description' },
+            { time: '16:30', title: 'Event 5', description: 'Event 5 Description' },
+            { time: '09:00', title: 'Event 1', description: 'Event 1 Description' },
+            { time: '10:45', title: 'Event 2', description: 'Event 2 Description' },
+            { time: '12:00', title: 'Event 3', description: 'Event 3 Description' }
+          ]
+      }),
+    };
+    res.send(data);
+  } else if (comId === "c103") {
+    let data = {
+      compId: "c103",
+      compName: "List 1",
+      compStyles: "CSS JSON String",
+      compData: JSON.stringify({
+        data: [
+          {
+            id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
+            title: 'First Item',
+          },
+          {
+            id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
+            title: 'Second Item',
+          },
+          {
+            id: '58694a0f-3da1-471f-bd96-145571e29d72',
+            title: 'Third Item',
+          },
+        ]
+      }),
+    };
+    res.send(data);
+  } else if (comId === "c104") {
+    let data = {
+      compId: "c104",
+      compName: "Tab 1",
+      compStyles: "CSS JSON String",
+      compData: JSON.stringify({
+        data: [
+          {
+            title: "TITLE 1",
+            content: "Some quick example text to build on the card title and make up the bulk of the card's content."
+          },
+          {
+            title: "TITLE  2",
+            content: "Some quick example text to build on the card title and make up the bulk of the card's content."
+          },
+          {
+            title: "TITLE 4",
+            content: "Some quick example text to build on the card title and make up the bulk of the card's content."
+          },
+          {
+            title: "TITLE 4",
+            content: "Some quick example text to build on the card title and make up the bulk of the card's content."
+          }
+        ]
+      }),
+    };
+    res.send(data);
+  } else if (comId === "c201") {
+    let data = {
+      compId: "c201",
+      compName: "Card1",
+      compStyles: "CSS JSON String",
+      compData: JSON.stringify({
+        title: "Card title",
+        content: "Some quick example text to build on the card title and make up the bulk of the card's content."
+      }),
+    };
+    res.send(data);
+  } else if (comId === "c202") {
+    let data = {
+      compId: "c202",
+      compName: "TimeLine 1",
+      compStyles: "CSS JSON String",
+      compData: JSON.stringify({
+        data:
+          [
+            { time: '09:00', title: 'Event 1', description: 'Event 1 Description' },
+            { time: '10:45', title: 'Event 2', description: 'Event 2 Description' },
+            { time: '12:00', title: 'Event 3', description: 'Event 3 Description' },
+            { time: '14:00', title: 'Event 4', description: 'Event 4 Description' },
+            { time: '16:30', title: 'Event 5', description: 'Event 5 Description' },
+            { time: '09:00', title: 'Event 1', description: 'Event 1 Description' },
+            { time: '10:45', title: 'Event 2', description: 'Event 2 Description' },
+            { time: '12:00', title: 'Event 3', description: 'Event 3 Description' }
+          ]
+      }),
+    };
+    res.send(data);
+  } else if (comId === "c203") {
+    let data = {
+      compId: "c203",
+      compName: "List 1",
+      compStyles: "CSS JSON String",
+      compData: JSON.stringify({
+        data: [
+          {
+            id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
+            title: 'First Item',
+          },
+          {
+            id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
+            title: 'Second Item',
+          },
+          {
+            id: '58694a0f-3da1-471f-bd96-145571e29d72',
+            title: 'Third Item',
+          },
+        ]
+      }),
+    };
+    res.send(data);
+  } else if (comId === "c204") {
+    let data = {
+      compId: "c204",
+      compName: "Tab 1",
+      compStyles: "CSS JSON String",
+      compData: JSON.stringify({
+        data: [
+          {
+            title: "TITLE 1",
+            content: "Some quick example text to build on the card title and make up the bulk of the card's content."
+          },
+          {
+            title: "TITLE  2",
+            content: "Some quick example text to build on the card title and make up the bulk of the card's content."
+          },
+          {
+            title: "TITLE 4",
+            content: "Some quick example text to build on the card title and make up the bulk of the card's content."
+          },
+          {
+            title: "TITLE 4",
+            content: "Some quick example text to build on the card title and make up the bulk of the card's content."
+          }
+        ]
+      }),
+    }
+
+    res.send(data);
+  } else if (comId === "c301") {
+    let data = {
+      compId: "c301",
+      compName: "Card1",
+      compStyles: "CSS JSON String",
+      compData: JSON.stringify({ title: "Card title", content: "Some quick example text to build on the card title and make up the bulk of the card's content." }),
+
+    };
+    res.send(data);
+  } else if (comId === "c302") {
+    let data = {
+      compId: "c302",
+      compName: "TimeLine 1",
+      compStyles: "CSS JSON String",
+      compData: JSON.stringify({
+        data:
+          [
+            { time: '09:00', title: 'Event 1', description: 'Event 1 Description' },
+            { time: '10:45', title: 'Event 2', description: 'Event 2 Description' },
+            { time: '12:00', title: 'Event 3', description: 'Event 3 Description' },
+            { time: '14:00', title: 'Event 4', description: 'Event 4 Description' },
+            { time: '16:30', title: 'Event 5', description: 'Event 5 Description' },
+            { time: '09:00', title: 'Event 1', description: 'Event 1 Description' },
+            { time: '10:45', title: 'Event 2', description: 'Event 2 Description' },
+            { time: '12:00', title: 'Event 3', description: 'Event 3 Description' }
+          ]
+      }),
+    };
+    res.send(data);
+  } else if (comId === "c303") {
+    let data = {
+      compId: "c303",
+      compName: "List 1",
+      compStyles: "CSS JSON String",
+      compData: JSON.stringify({
+        data: [
+          {
+            id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
+            title: 'First Item',
+          },
+          {
+            id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
+            title: 'Second Item',
+          },
+          {
+            id: '58694a0f-3da1-471f-bd96-145571e29d72',
+            title: 'Third Item',
+          },
+        ]
+      }),
+    };
+    res.send(data);
+  } else if (comId === "c304") {
+    let data = {
+      compId: "c304",
+      compName: "Tab 1",
+      compStyles: "CSS JSON String",
+      compData: JSON.stringify({
+        data: [
+          {
+            title: "TITLE 1",
+            content: "Some quick example text to build on the card title and make up the bulk of the card's content."
+          },
+          {
+            title: "TITLE  2",
+            content: "Some quick example text to build on the card title and make up the bulk of the card's content."
+          },
+          {
+            title: "TITLE 4",
+            content: "Some quick example text to build on the card title and make up the bulk of the card's content."
+          },
+          {
+            title: "TITLE 4",
+            content: "Some quick example text to build on the card title and make up the bulk of the card's content."
+          }
+        ]
+      }),
+    };
+    res.send(data);
+  } else {
+    let data = {
+      compId: "c101",
+      compName: "Card1",
+      compStyles: "CSS JSON String",
+      compData: JSON.stringify({ title: "Card title", content: "Some quick example text to build on the card title and make up the bulk of the card's content." }),
+    };
+    res.send(data);
+  }
 
 })
 
