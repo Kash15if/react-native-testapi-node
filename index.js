@@ -181,21 +181,21 @@ app.get('/getPageDetailsById/:pageId', (req, res) => {
         {
           compId: "c101",
           CompNAme: "Card1",
-          CompType: "Card",
+          CompType: "card",
           // ColSPan-rowspan-flex-size
           sequence: 1//,etc
         },
         {
           compId: "c102",
           CompNAme: "TimeLine 1",
-          CompType: "TimeLine",
+          CompType: "timeline",
           // ColSPan-rowspan-flex-size
           sequence: 2//,etc
         },
         {
           compId: "c103",
           CompNAme: "List 1",
-          CompType: "List",
+          CompType: "list",
           // ColSPan-rowspan-flex-size
           sequence: 3//,etc
         },
@@ -221,14 +221,14 @@ app.get('/getPageDetailsById/:pageId', (req, res) => {
         {
           compId: "c202",
           CompNAme: "TimeLine 1",
-          CompType: "TimeLine",
+          CompType: "timeline",
           // ColSPan-rowspan-flex-size
           sequence: 2//,etc
         },
         {
           compId: "c201",
           CompNAme: "Card1",
-          CompType: "Card",
+          CompType: "card",
           // ColSPan-rowspan-flex-size
           sequence: 1//,etc
         }
@@ -253,7 +253,7 @@ app.get('/getPageDetailsById/:pageId', (req, res) => {
         {
           compId: "c304",
           CompNAme: "Tab 1",
-          CompType: "Tab",
+          CompType: "tab",
           // ColSPan-rowspan-flex-size
           sequence: 1//,etc
         }
